@@ -8,9 +8,9 @@ const LabelSheet = () => {
   const [labels, setLables] = useState([]);
 
     // Define label and paper dimensions in inches
-	const labelsPerPage = 21;
-	const labelWidth = 3.4 * 96; // Convert inches to pixels
-	const labelHeight = 2.15 * 96;
+	const labelsPerPage = 4;
+	const labelWidth = 6.4 * 96; // Convert inches to pixels
+	const labelHeight = 4.15 * 96;
 	const paperWidth = 12 * 96;
 	const paperHeight = 18 * 96;
 
