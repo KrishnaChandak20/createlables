@@ -9,8 +9,8 @@ const LabelSheet = () => {
 
     // Define label and paper dimensions in inches
 	const labelsPerPage = 10;
-	const labelWidth = 3.4 * 96; // Convert inches to pixels
-	const labelHeight = 2.15 * 96;
+	const labelWidth = 4.6 * 96; // Convert inches to pixels
+	const labelHeight = 3.15 * 96;
 	const paperWidth = 12 * 96;
 	const paperHeight = 18 * 96;
 
@@ -89,7 +89,7 @@ const LabelSheet = () => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "40px",
+                  fontSize: "45px",
                   fontFamily: "Arial, sans-serif",
                   margin: "2px",
 				  marginRight:"30px"
