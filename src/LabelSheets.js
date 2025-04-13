@@ -6,6 +6,7 @@ import html2canvas from "html2canvas";
 const LabelSheet = () => {
   const printRef = useRef();
   const [labels, setLables] = useState([]);
+  const [loader, setLoader] = useState(false)
 
     // Define label and paper dimensions in inches
 	const labelsPerPage = 10;
@@ -34,6 +35,7 @@ const LabelSheet = () => {
   }
 
   const handleSavePDF = async () => {
+	setLoader(true)
     if (labels.length === 0) {
       alert("No labels to generate PDF!");
       return;
@@ -54,13 +56,15 @@ const LabelSheet = () => {
         }
       );
     }
-
+ 
     pdf.save("labels.pdf");
+	setLoader(false);
   };
   return (
 	<div style={{ textAlign: "center", margin: "20px" }}>
 	      <button disabled={pages.length === 0} onClick={() => handleSavePDF()} className="print-button">Save as PDF</button>
 		  <input type="file" accept=".csv" onChange={handleFileUpload} />
+		  {loader && <span>Loading...</span>}
        {/* Render multiple pages */}
 	   <div ref={printRef}>
         {pages.map((page, pageIndex) => (
